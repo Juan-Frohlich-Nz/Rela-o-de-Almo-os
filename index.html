@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Definindo o idioma da página como inglês -->
+<head>
+  <meta charset="UTF-8"> <!-- Codificação de caracteres para garantir que caracteres especiais sejam exibidos corretamente -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tornar a página responsiva em dispositivos móveis -->
+  <link rel="stylesheet" href="styles.css"> <!-- Vincula o arquivo de estilos CSS -->
+  <title>Relação de Almoço</title> <!-- Título da página -->
+</head>
+<body>
+  <!-- Contêiner para as letras do alfabeto (geradas dinamicamente pelo JavaScript) -->
+  <div class="alphabet-container">
+    <!-- As letras do alfabeto serão inseridas aqui pelo JavaScript -->
+  </div>
+
+  <!-- Modal para mostrar os nomes da letra selecionada -->
+  <div class="modal" id="nameModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span> <!-- Botão para fechar o modal -->
+      <h3>Selecione um nome:</h3> <!-- Título do modal -->
+      <ul id="nameList"></ul> <!-- Lista onde os nomes serão exibidos dinamicamente -->
+    </div>
+  </div>
+
+  <!-- Modal para capturar a foto -->
+  <div class="modal" id="cameraModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeCamera">&times;</span> <!-- Botão para fechar o modal da câmera -->
+      <h3>Capture uma foto:</h3> <!-- Título do modal -->
+      <video id="video" autoplay></video> <!-- Elemento de vídeo para mostrar a câmera ao vivo -->
+      <canvas id="canvas" style="display:none;"></canvas> <!-- Elemento de canvas para capturar a foto -->
+      <button id="captureBtn">Capturar Foto</button> <!-- Botão para capturar a foto -->
+    </div>
+  </div>
+
+  <!-- Botão para gerar o relatório -->
+  <button id="generateReportBtn">Gerar Relatório</button>
+
+  <!-- Inclusão do script da biblioteca XLSX para criar o arquivo de relatório -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+  
+  <!-- Inclusão do script JavaScript que contém a lógica de captura de foto e geração do relatório -->
+  <script src="script.js"></script>
+</body>
+</html>

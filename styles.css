@@ -1,0 +1,164 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif; /* Fonte padrão para a página */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o preenchimento padrão */
+    display: flex; /* Usando flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+    background-color: #f0f0f0; /* Cor de fundo suave */
+}
+
+/* Contêiner do alfabeto */
+.alphabet-container {
+    display: grid; /* Usando grid layout para organizar os quadrados */
+    grid-template-columns: repeat(6, 60px); /* Cria 6 colunas de 60px de largura */
+    gap: 10px; /* Espaçamento entre os quadrados */
+}
+
+/* Estilo dos quadrados do alfabeto */
+.alphabet-container div {
+    width: 60px; /* Largura do quadrado */
+    height: 60px; /* Altura do quadrado */
+    display: flex; /* Usando flexbox para alinhar o conteúdo dentro dos quadrados */
+    justify-content: center; /* Alinha horizontalmente o conteúdo (letras) */
+    align-items: center; /* Alinha verticalmente o conteúdo */
+    background-color: #007bff; /* Cor de fundo do quadrado */
+    color: #fff; /* Cor do texto */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+/* Efeito de hover nos quadrados */
+.alphabet-container div:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilos do modal de nomes */
+.modal, .camera-modal {
+    display: none; /* Inicialmente oculta o modal */
+    position: fixed; /* Fixa o modal na tela */
+    top: 0; /* Fixa o modal no topo */
+    left: 0; /* Fixa o modal à esquerda */
+    width: 100%; /* O modal ocupa toda a largura da tela */
+    height: 100%; /* O modal ocupa toda a altura da tela */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    justify-content: center; /* Centraliza o conteúdo do modal */
+    align-items: center; /* Centraliza verticalmente o conteúdo do modal */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background-color: #fff; /* Cor de fundo do conteúdo do modal */
+    padding: 20px; /* Preenchimento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    text-align: center; /* Alinha o texto ao centro */
+    position: relative; /* Para posicionar o botão de fechar */
+}
+
+/* Botão de fechar do modal */
+.close-btn {
+    position: absolute; /* Posiciona o botão de fechar no topo direito */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    font-size: 18px; /* Tamanho da fonte do botão */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: #333; /* Cor do texto */
+}
+
+/* Efeito de hover no botão de fechar */
+.close-btn:hover {
+    color: red; /* Cor vermelha ao passar o mouse */
+}
+
+/* Estilos da lista de nomes dentro do modal */
+#nameList {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o preenchimento */
+}
+
+#nameList li {
+    margin: 10px 0; /* Espaçamento entre os itens */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    font-size: 18px; /* Tamanho da fonte */
+    color: #007bff; /* Cor azul para os itens */
+}
+
+/* Efeito de hover na lista de nomes */
+#nameList li:hover {
+    text-decoration: underline; /* Sublinha o texto ao passar o mouse */
+}
+
+/* Estilos do modal da câmera */
+#video {
+    width: 100%; /* O vídeo ocupa toda a largura disponível */
+    max-width: 400px; /* Largura máxima do vídeo */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+#canvas {
+    display: none; /* Inicialmente invisível */
+    width: 100%; /* O canvas ocupa toda a largura disponível */
+    max-width: 400px; /* Largura máxima do canvas */
+    margin-top: 10px; /* Espaçamento superior */
+    border: 1px solid #ccc; /* Borda de cor cinza */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Estilos do botão de captura */
+#captureBtn {
+    padding: 10px 20px; /* Preenchimento do botão */
+    background-color: #007bff; /* Cor de fundo azul */
+    color: white; /* Cor do texto branco */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+/* Efeito de hover no botão de captura */
+#captureBtn:hover {
+    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilo geral para o botão Gerar Relatório */
+#generateReportBtn {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    padding: 10px 20px; /* Preenchimento do botão */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+    position: fixed; /* Fixa o botão no rodapé */
+    bottom: 20px; /* Distância do botão do fundo da página */
+    left: 50%; /* Posiciona o botão no centro da tela */
+    transform: translateX(-50%); /* Ajusta o alinhamento horizontal - pode ser removido se não necessário */
+    z-index: 1000; /* Garante que o botão fique sobre outros elementos */
+}
+
+/* Efeito ao passar o mouse (comentado) */
+#generateReportBtn:hover {
+    background-color: #45a049; /* Cor mais escura ao passar o mouse */
+    transform: translateY(-2px); /* Levanta o botão um pouco */
+}
+
+/* Efeito de clique no botão */
+#generateReportBtn:active {
+    background-color: #388e3c; /* Cor ainda mais escura ao clicar */
+    transform: translateY(2px); /* Simula o botão sendo pressionado */
+}
+
+/* Efeito de foco no botão */
+#generateReportBtn:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    box-shadow: 0 0 5px rgba(72, 193, 228, 0.6); /* Borda de foco azul */
+}
